@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
+import androidx.compose.ui.platform.*
 import androidx.compose.ui.res.*
 import androidx.compose.ui.unit.*
 import androidx.lifecycle.viewmodel.compose.*
@@ -56,7 +57,7 @@ fun HomeContent(
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
-        modifier = modifier
+        modifier = modifier.testTag("RewardList")
     ) {
         items(orderReward) { data ->
             RewardItem(

@@ -22,7 +22,8 @@ import com.dicoding.jetreward.ui.theme.*
 
 @Composable
 fun JetRewardApp(
-    modifier: Modifier = Modifier, navHostController: NavHostController = rememberNavController()
+    navHostController: NavHostController = rememberNavController(),
+    modifier: Modifier = Modifier
 ) {
     val navBackStackEntry by navHostController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
@@ -62,7 +63,7 @@ fun JetRewardApp(
                     type = NavType.LongType
                 }),
 
-            ) {
+                ) {
                 val id = it.arguments?.getLong("rewardId") ?: -1L
                 DetailScreen(rewardId = id, navigateBack = {
                     navHostController.navigateUp()
